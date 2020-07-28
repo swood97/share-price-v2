@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form id = "tickerSearch" onsubmit="appendTicker()">
+        <input type="text" name="ticker">
+        <input type="submit" value="Search">
+    </form>
+    
+    <script>
+        function appendTicker(){
+        var tickerSearch = document.getElementById('tickerSearch');
+        var tickerURL = "http://127.0.0.1:5500/stocks/" + document.getElementsByName("ticker")[0].value + ".html" 
+        tickerSearch.action = tickerURL ;
+    }
+    </script>
+    
+    </body>
+</html>
